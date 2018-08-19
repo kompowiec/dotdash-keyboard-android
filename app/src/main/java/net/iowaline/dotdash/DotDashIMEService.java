@@ -99,6 +99,7 @@ public class DotDashIMEService extends InputMethodService implements
         this.autocommit = this.prefs.getBoolean("autocommit", false);
 
         // TODO Replace this with an XML file
+            //International morse code 1920
         morseMap = new Hashtable<>();
         morseMap.put(".-", "a");
         morseMap.put("-...", "b");
@@ -136,6 +137,7 @@ public class DotDashIMEService extends InputMethodService implements
         morseMap.put("---..", "8");
         morseMap.put("----.", "9");
         morseMap.put("-----", "0");
+            //Punctuation marks and symbols
         morseMap.put(".----.", "\'");
         morseMap.put(".--.-.", "@");
         morseMap.put(".-...", "&");
@@ -155,6 +157,7 @@ public class DotDashIMEService extends InputMethodService implements
         morseMap.put("-.-.-.", ";");
         morseMap.put("-..-.", "/");
         morseMap.put("..--.-", "_");
+        morseMap.put("-....-", "—");
         // Aaron Wells' custom additions to Morse code
         morseMap.put("....--", "#");
         morseMap.put("-.-.-", "*");
@@ -169,7 +172,18 @@ public class DotDashIMEService extends InputMethodService implements
         morseMap.put(".--.---", "^");
         morseMap.put(".-..-", "\\");
         morseMap.put(".--...", "|");
-
+        morseMap.put("...-..-", "$");
+        //special commands
+        //morseMap.put(".-.-", "UNKNOWN STATION");
+        morseMap.put(".-.-.", "OUT");
+        morseMap.put("...-.", "Verified");
+        morseMap.put("..-.-", "INTERROGATIVE");
+        morseMap.put("........", "CORRECTION");
+        //morseMap.put(".-.-.", "TRANSMISSION; OUT");
+        morseMap.put("-...-", "BREAK");
+        morseMap.put("-.-.-", "ATTENTION");
+        morseMap.put("...---...", "SOS");
+                    
         updateNewlinePref();
 
         // This variable is used in onKey to determine how many
